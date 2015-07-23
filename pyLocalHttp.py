@@ -31,7 +31,8 @@ def main():
 
     sa = httpd.socket.getsockname()
 
-    print("Serving on " + str(sa[0]) + " port " + str(sa[1]) + " ..." )
+    print("\tServing on http://" + str(sa[0]) + ":" + str(sa[1]) )
+    print("\tPress Ctrl+c to stop...")
     httpd.serve_forever()
 
 
@@ -39,5 +40,5 @@ if __name__ == '__main__':
     try:
         main()
     except KeyboardInterrupt as e:
-        print("No more serving.")
+        print("\tNo more serving.")
         exit()
