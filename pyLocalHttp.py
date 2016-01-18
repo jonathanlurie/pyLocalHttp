@@ -12,6 +12,7 @@ description : Creates a local HTTP server on the curent directory.
 import sys
 import BaseHTTPServer
 from SimpleHTTPServer import SimpleHTTPRequestHandler
+import webbrowser
 
 def main():
     handlerClass = SimpleHTTPRequestHandler
@@ -33,6 +34,10 @@ def main():
 
     print("\tServing on http://" + str(sa[0]) + ":" + str(sa[1]) )
     print("\tPress Ctrl+c to stop...")
+
+    # open the web browser
+    webbrowser.open("http://" + str(sa[0]) + ":" + str(sa[1]) )
+
     httpd.serve_forever()
 
 
